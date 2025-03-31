@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  ---Green: hsl(75, 94%, 57%);
+  ---White: hsl(0, 0%, 100%);
+  ---Grey-700: hsl(0, 0%, 20%);
+  ---Grey-800: hsl(0, 0%, 12%);
+  ---Grey-900: hsl(0, 0%, 8%);
+
+  --fonte-inter: "Inter", sans-serif;
+  --Font-size-paragraph: 14px;
+  --weight-400: 400;
+  --weight-600: 600;
+  --weight-700: 700;
+}
+
+body {
+  background-color: var(---Grey-900);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+
+  & .content {
+    background-color: var(---Grey-800);
+    width: 500px;
+    height: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    border: none;
+    border-radius: 15px;
+
+    & img {
+      border-radius: 9999px;
+    }
+
+    & div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 10px;
+      text-align: center;
+
+      & h1 {
+        font-family: var(--fonte-inter);
+        font-weight: var(--weight-700);
+        color: var(---White);
+      }
+      & h2 {
+        font-family: var(--fonte-inter);
+        font-weight: var(--weight-600);
+        color: var(---Green);
+        font-size: 15px;
+      }
+    }
+
+    & p {
+      font-family: var(--fonte-inter);
+      font-weight: var(--weight-400);
+      color: var(---White);
+      font-size: var(--Font-size-paragraph);
+    }
+
+    & ul {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 15px;
+
+      & li {
+        list-style: none;
+
+        & button {
+          background-color: var(---Grey-700);
+          width: 300px;
+          padding: 15px 0;
+          border: none;
+          border-radius: 10px;
+
+          & a {
+            text-decoration: none;
+            color: inherit;
+            font-family: var(--fonte-inter);
+            font-weight: var(--weight-600);
+            color: var(---White);
+            font-size: var(--Font-size-paragraph);
+          }
+        }
+
+        & button:hover {
+          background-color: var(---Green);
+          transition: 0.8s;
+
+          & a {
+            color: black;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  & body {
+    & .content {
+      width: 335px;
+      height: 600px;
+
+      & img {
+        width: 80px;
+      }
+
+      & div {
+        & h1 {
+          font-size: 25px;
+          font-weight: var(--weight-600);
+        }
+        & h2 {
+          font-size: 15px;
+          font-weight: var(--weight-600);
+        }
+      }
+
+      & p {
+        font-size: 12px;
+      }
+
+      & ul {
+        & li {
+          & button {
+            width: 300px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
